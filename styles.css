@@ -8,10 +8,208 @@
   text-decoration: none;
 }
 
+:root {
+  --green: rgb(74, 140, 78);
+  --purple: rgb(50, 49, 106);
+  --bg: rgb(175, 173, 176);
+  --color: #333;
+}
+
 a {
-  color: #000;
+  color: var(--color);
 }
 
 body {
   font-family: 'Roboto', sans-serif;
+  color: var(--color);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.title {
+  position: relative;
+  font-size: 3rem;
+  z-index: 1;
+}
+
+.title::before {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  left: -5px;
+  display: block;
+  width: 25px;
+  height: 25px;
+  border-radius: .2rem;
+  background: var(--green);
+  z-index: -1;
+}
+
+.header #new {
+  display: flex;
+  align-items: center;
+  column-gap: .5rem;
+  border-radius: .2rem;
+  border: none;
+  background: var(--green);
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  padding: .5rem 1rem;
+  cursor: pointer;
+  outline: none;
+}
+
+.border {
+  display: block;
+  width: 90%;
+  height: 3px;
+  border-radius: .2rem;
+  background: #eee;
+  margin: 0 auto;
+}
+
+.container-table {
+  width: 98%;
+  margin: 2rem auto 0 auto;
+}
+
+.container-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.container-table thead {
+  background: #ccc;
+  color: var(--color);
+}
+
+.container-table tbody td {
+  text-align: center;
+  border: solid 2px #fff;
+  padding: .2rem;
+}
+
+.btnAction {
+  background: transparent;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.modal-container {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, .5);
+  z-index: 2000;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-container.mostrar {
+  display: flex;
+}
+
+.modal {
+  position: relative;
+  background: #fff;
+  width: 30%;
+  min-width: 300px;
+  padding: 20px;
+  border-radius: 3px;
+}
+
+@keyframes modal {
+  from {
+      opacity: 0;
+      transform: translate3d(0, -60px, 0);
+  }
+
+  to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+  }
+}
+
+.mostrar .modal {
+  animation: modal .3s;
+}
+
+.modal .fa-times {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--color);
+  cursor: pointer;
+  transition: .3s;
+}
+
+.modal .fa-times:hover {
+  color: #f00;
+  border-top-right-radius: 2px;
+}
+
+.modal form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+
+.modal form label, input {
+  width: 100%;
+}
+
+.modal form input, .btn {
+  margin: 5px 0;
+  background: transparent;
+  border: solid 1px #333;
+  border-radius: .2rem;
+  padding: .6rem;
+  color: var(--color);
+  outline: none;
+}
+
+.modal form input:focus,
+.modal form input:hover,
+.modal .btn:focus,
+.modal .btn:hover {
+  border-color: var(--green);
+  box-shadow:
+    0 0 0 3px #c2ffaa,
+    0 0 0 4px var(--green)
+  ;
+}
+
+.btn {
+  cursor: pointer;
+  font-size: 1em;
+  transition: .3s;
+  border: none;
+  background: rgba(0, 0, 0, .5);
+  color: #fff;
+}
+
+.btn:hover {
+  background: var(--green);
+  color: #c2ffaa;
+}
+
+.modal form input::placeholder {
+  color: #444;
+  font-size: 1.1em;
 }

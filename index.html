@@ -10,6 +10,51 @@
     <title>Cadastro de Funcionários</title>
 </head>
 <body>
+  <section class="container">
+    <header class="header">
+      <h1 class="title">Cadastro de Funcionários</h1>
+      <button onclick="openModal()" id="new">
+        <i class="fas fa-plus"></i>
+        Novo
+      </button>
+    </header>
+    <span class="border"></span>
+    <div class="container-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Função</th>
+            <th>Salário</th>
+            <th class="action">Editar</th>
+            <th class="action">Excluir</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <div id="modal-perfil" class="modal-container">
+      <div class="modal">
+          <button class="fas fa-times"></button>
+          <h3 class="title">Cadastro</h3>
+          <form>
+            <label for="nome">
+              <input type="text" id="nome" placeholder="Nome" required>
+            </label>
+
+            <label for="funcao">
+              <input type="text" id="funcao" placeholder="Função" required>
+            </label>
+
+            <label for="salario">
+              <input type="number" id="salario" placeholder="Salário" required>
+            </label>
+            <button class="btn">Salvar</button>
+          </form>
+      </div>
+  </div>
+  </section>
   <script src="script.js"></script>
 </body>
 </html>
