@@ -33,19 +33,24 @@ function insertItem( item, index ) {
   let tr = document.createElement( 'tr' )
 
   tr.innerHTML = `
-    <td>${ item.nome }</td>
-    <td>${ item.funcao }</td>
-    <td>R$ ${ item.salario }</td>
-    <td class="action">
-      <button class="btnAction" onClick="editItem(${ index })">
-        <i class="fas fa-edit"></i>
-      </button>
-    </td>
-    <td class="action">
-      <button class="btnAction" onClick="deletedItem(${ index })">
-        <i class="fas fa-trash-alt"></i>
-      </button>
-    </td>
+    <tr><td>${ item.nome }</td></tr>
+    <tr><td>${ item.funcao }</td></tr>
+    <tr><td>R$ ${ item.salario }</td></tr>
+    <tr>
+      <td class="action">
+        <button class="btnAction" onClick="editItem(${ index })">
+          <i class="fas fa-edit"></i>
+        </button>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="action">
+        <button class="btnAction" onClick="deletedItem(${ index })">
+          <i class="fas fa-trash-alt"></i>
+        </button>
+      </td>
+    </tr>
   `
 
   tbody.appendChild( tr )

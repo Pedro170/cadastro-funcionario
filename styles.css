@@ -85,8 +85,16 @@ body {
 }
 
 .container-table thead {
-  background: #ccc;
-  color: var(--color);
+  background: var(--green);
+  color: #fff;
+}
+
+.container-table thead tr th {
+  padding: .2rem;
+}
+
+.container-table tbody tr:nth-child( even ) {
+  background: #eee;
 }
 
 .container-table tbody td {
