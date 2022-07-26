@@ -221,3 +221,33 @@ body {
   color: #444;
   font-size: 1.1em;
 }
+
+@media ( max-width: 40rem ) {
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .title::before {
+    bottom: 5px;
+    left: -5px;
+    width: 16px;
+    height: 16px;
+    border-radius: .1rem;
+  }
+
+  .header #new {
+    display: flex;
+    align-items: center;
+    column-gap: .2rem;
+    font-size: .875rem;
+    padding: .4rem .8rem;
+  }
+
+  .container-table {
+    font-size: .875rem;
+  }
+
+  .btnAction {
+    font-size: .875rem;
+  }
+}
